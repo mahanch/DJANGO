@@ -1,0 +1,57 @@
+{% extends 'shared/layout.html' %}
+{% block title %}
+    درباره ما
+{% endblock %}
+
+{% block content %}
+
+    <div id="contact-page" class="container">
+        <div class="bg">
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="contact-info">
+                        <h2 class="title text-center">لوگـو شرکت</h2>
+                        <img src="static/images/home/About-Logo.jpg" class="img-responsive">
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="about">
+                        <h2 class="title text-center">دربـاره ما</h2>
+                        <p class="about-desc">
+                            {{ site_detail.about_us|linebreaksbr}}
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 about-address">
+                    <address>
+                        <p>{{ site_detail}} |
+                            {% if site_detail.adress%}{{ site_detail.address}}|{% endif %}
+                            {% if site_detail.phone%}تلفن تماس :{{ site_detail.phone }} |{% endif %}
+                            {% if site_detail.fax%}فکس : {{ site_detail.fax }} |{% endif %}
+                            {% if site_detail.email %}ایمیـل :{{ site_detail.email}}{% endif %}
+                        </p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="container">
+                    <div class="col-sm-12" style="overflow: hidden; margin-bottom: 40px"><h2 class="title text-center">
+                        مـا اینجـا هستیـم ... </h2>
+                        <div id="gmap" class="contact-map">
+                            <img src="static/images/home/Map.jpg" alt="Map">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}
